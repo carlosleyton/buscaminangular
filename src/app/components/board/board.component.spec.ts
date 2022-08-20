@@ -39,7 +39,6 @@ describe('BoardComponent', () => {
       gameStatus$: of(GameStatusEnum.Running),
       remainingEmptyCells$: of(80),
       newEmptyBoard: () => {},
-      setEmojiFace: () => {},
     };
 
     TestBed.configureTestingModule({
@@ -60,7 +59,7 @@ describe('BoardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deberia crearse', () => {
     expect(component).toBeTruthy();
   });
 });

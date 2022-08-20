@@ -35,11 +35,21 @@ describe('CellComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Se puede crear', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render correct className', () => {
+  it('No deberia ser una mina', () => {
+    expect(component.cell.isMine).not.toBeTruthy();
+  });
+  it('Deberia estar clickeado', () => {
+    expect(component.cell.isOpened).toBeTruthy();
+  });
+  it('Deberia tener una mina cercana debido a su numero', () => {
+    expect(component.cell.type).toBe(1);
+  });
+
+  it('Deberia renderizarse con className correcto', () => {
     expect(
       fixture.debugElement.query(By.css('button')).nativeElement.className
     ).toContain('nes-btn');
