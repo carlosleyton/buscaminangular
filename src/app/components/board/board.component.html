@@ -1,16 +1,28 @@
 <div class="nes-container with-title is-centered">
-	<p class="title nes-text" [ngClass]="{
-		'is-primary': gameStatus === 'Ganaste!',
-		'is-success': gameStatus === 'En linea',
-		'is-error': gameStatus === 'Perdiste!'
-	}">Buscaminas - {{gameStatus}}</p>
-	<div *ngFor="let row of boardParsed; let y = index;">
-		<app-cell *ngFor="let cell of row; let x = index;" [cell]="cell" (open)="onOpenCell($event)" [vertical]="y"
-			[horizontal]="x" [attr.data-i]="cell.id" (focusCell)="onFocusCell($event)">
-		</app-cell>
-	</div>
-	<i class="nes-icon is-large " [ngClass]="{
-		'trophy': gameStatus === 'Ganaste!',
-		'close': gameStatus === 'Perdiste!'
-	}"></i>
+  <p
+    class="title nes-text"
+    [ngClass]="{
+      'is-primary': gameStatus === 'Ganaste!',
+      'is-success': gameStatus === 'En linea',
+      'is-error': gameStatus === 'Perdiste!'
+    }">
+    Buscaminas - {{ gameStatus }}
+  </p>
+  <div *ngFor="let row of boardParsed; let y = index">
+    <app-cell
+      *ngFor="let cell of row; let x = index"
+      [cell]="cell"
+      (openCell)="onOpenCell($event)"
+      [vertical]="y"
+      [horizontal]="x"
+      [attr.data-i]="cell.id"
+      (focusCell)="onFocusCell($event)">
+    </app-cell>
+  </div>
+  <i
+    class="nes-icon is-large"
+    [ngClass]="{
+      trophy: gameStatus === 'Ganaste!',
+      close: gameStatus === 'Perdiste!'
+    }"></i>
 </div>

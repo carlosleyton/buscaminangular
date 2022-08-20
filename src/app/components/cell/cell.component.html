@@ -1,19 +1,21 @@
-<button type="button" class="nes-btn m-2 {{cell.openedIdClassName}}" [ngClass]="{
-        'is-disabled': cell.type === 0 && cell.isOpened === true,
-        'is-warning': cell.type > 0 && cell.isOpened === true,
-        'is-error': cell.isMineExploded === true
-    }" (click)="onClick()">
-	<ng-container *ngIf="!cell.isOpened">
-		?
-	</ng-container>
-	<ng-container *ngIf="cell.isOpened">
-		<ng-container [ngSwitch]="cell.type">
-			<ng-container *ngSwitchCase="'M'">
-				<i class="nes-icon close is-small"></i>
-			</ng-container>
-			<ng-container *ngSwitchDefault>
-				{{ cell.type }}
-			</ng-container>
-		</ng-container>
-	</ng-container>
+<button
+  type="button"
+  class="nes-btn m-2 {{ cell.openedIdClassName }}"
+  [ngClass]="{
+    'is-disabled': cell.type === 0 && cell.isOpened === true,
+    'is-warning': cell.type > 0 && cell.isOpened === true,
+    'is-error': cell.isMineExploded === true
+  }"
+  (click)="onClick()">
+  <ng-container *ngIf="!cell.isOpened"> ? </ng-container>
+  <ng-container *ngIf="cell.isOpened">
+    <ng-container [ngSwitch]="cell.type">
+      <ng-container *ngSwitchCase="'M'">
+        <i class="nes-icon close is-small"></i>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        {{ cell.type }}
+      </ng-container>
+    </ng-container>
+  </ng-container>
 </button>

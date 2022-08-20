@@ -7,17 +7,9 @@ import { CellComponent } from './components/cell/cell.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
-  declarations: [
-    AppComponent,
-    BoardComponent,
-    CellComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FlexLayoutModule
-  ],
+  declarations: [AppComponent, BoardComponent, CellComponent],
+  imports: [BrowserModule, HttpClientModule, FlexLayoutModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

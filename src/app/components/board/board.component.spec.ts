@@ -7,7 +7,7 @@ import { GameStatusEnum } from 'src/app/utils/enums';
 import { BoardStructure } from 'src/app/utils/interfaces';
 
 @Pipe({
-  name: 'stopwatch'
+  name: 'stopwatch',
 })
 export class MockStopWatch implements PipeTransform {
   transform(value: number): number {
@@ -24,37 +24,34 @@ describe('BoardComponent', () => {
     mochGameService = {
       boardHasChanded$: of(<BoardStructure>{
         board: [
-          [1, 1, 2, "M", 1, 0, 0, 0, 0],
-          [2, "M", 4, 2, 1, 0, 1, 1, 1],
-          [2, "M", "M", 2, 1, 1, 1, "M", 1],
-          [1, 3, 3, 3, "M", 2, 2, 3, 2],
-          [0, 1, "M", 3, 2, 2, "M", 2, "M"],
-          [0, 1, 2, "M", 1, 1, 1, 2, 1],
+          [1, 1, 2, 'M', 1, 0, 0, 0, 0],
+          [2, 'M', 4, 2, 1, 0, 1, 1, 1],
+          [2, 'M', 'M', 2, 1, 1, 1, 'M', 1],
+          [1, 3, 3, 3, 'M', 2, 2, 3, 2],
+          [0, 1, 'M', 3, 2, 2, 'M', 2, 'M'],
+          [0, 1, 2, 'M', 1, 1, 1, 2, 1],
           [0, 0, 1, 1, 1, 0, 0, 0, 0],
           [0, 0, 0, 0, 0, 0, 0, 0, 0],
           [0, 0, 0, 0, 0, 0, 0, 0, 0],
         ],
-        isBoardReseted: false
+        isBoardReseted: false,
       }),
       gameStatus$: of(GameStatusEnum.Running),
       remainingEmptyCells$: of(80),
-      newEmptyBoard: () => { },
-      setEmojiFace: () => { },
+      newEmptyBoard: () => {},
+      setEmojiFace: () => {},
     };
 
     TestBed.configureTestingModule({
       declarations: [BoardComponent, MockStopWatch],
-      providers: [
-        { provide: GameService, useValue: mochGameService },
-      ]
+      providers: [{ provide: GameService, useValue: mochGameService }],
     }).compileComponents();
   }));
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BoardComponent]
-    })
-      .compileComponents();
+      declarations: [BoardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

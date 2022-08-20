@@ -12,7 +12,7 @@ describe('CellComponent', () => {
     isMine: false,
     isMineExploded: false,
     isOpened: true,
-    label: "1",
+    label: '1',
     type: 1,
     x: 0,
     y: 0,
@@ -24,11 +24,8 @@ describe('CellComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [CellComponent],
-      providers: [
-        { provide: GameService, useValue: mockGameService }
-      ]
-    })
-      .compileComponents();
+      providers: [{ provide: GameService, useValue: mockGameService }],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -43,9 +40,14 @@ describe('CellComponent', () => {
   });
 
   it('should render correct className', () => {
-    expect(fixture.debugElement.query(By.css('button')).nativeElement.className).toContain("nes-btn");
-    expect(fixture.debugElement.query(By.css('button')).nativeElement.className).toContain("opened-1");
-    expect(fixture.debugElement.query(By.css('button')).nativeElement.className).toContain("opened");
+    expect(
+      fixture.debugElement.query(By.css('button')).nativeElement.className
+    ).toContain('nes-btn');
+    expect(
+      fixture.debugElement.query(By.css('button')).nativeElement.className
+    ).toContain('opened-1');
+    expect(
+      fixture.debugElement.query(By.css('button')).nativeElement.className
+    ).toContain('opened');
   });
-
 });
